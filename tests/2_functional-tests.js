@@ -54,7 +54,7 @@ suite('Functional Tests', function() {
           .end(function(err, res) {
           assert.equal(res.status, 200);
           assert.equal(res.body.issue_title, "t2");
-          assert.equal(res.body.issue_text, "Descreption");
+          assert.equal(res.body.issue_text, "If I'm the only docuemnt that exists in api/issues/test, the tests were probably successful");
           assert.equal(res.body.created_by, "me");
           assert.strictEqual(res.body.assigned_to, "");
           assert.strictEqual(res.body.status_text, "");
