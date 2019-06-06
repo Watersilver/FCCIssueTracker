@@ -17,7 +17,11 @@ const CONNECTION_STRING = process.env.DB;
 
 // Uncomment when I don't need the iframe in glitch
 app.use(helmet());
-
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"]
+  }
+}))
 
 
 MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true }, function(err, client) {
